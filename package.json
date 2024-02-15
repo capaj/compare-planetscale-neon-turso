@@ -1,0 +1,20 @@
+{
+  "name": "compare-planetscale-neon-turso",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx runTests.ts",
+    "deploy": "cd neon-cloudflare && pnpm run deploy && cd ../turso-cloudflare && pnpm run deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chartjs-node-canvas": "^4.1.6"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1"
+  }
+}
