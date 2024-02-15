@@ -1,4 +1,4 @@
-# Serverless DB comparison
+# Serverless DB latencies comparison
 
 comparison made between three serverless DB offerings:
 
@@ -20,6 +20,8 @@ Stack:
 
 - drizzle orm
 - cloudflare workers
+
+Neon is using the connection pooler as advised by their docs for serverless environments.
 
 ## Conclusions
 
