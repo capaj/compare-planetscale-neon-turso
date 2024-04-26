@@ -1,7 +1,7 @@
-import { Client } from '@neondatabase/serverless'
+import { neon } from '@neondatabase/serverless'
 import { eq } from 'drizzle-orm/expressions'
 import type { NeonDatabase } from 'drizzle-orm/neon-serverless'
-import { drizzle } from 'drizzle-orm/neon-serverless'
+import { drizzle } from 'drizzle-orm/neon-http';
 import type { IRequest as IttyRequest, RequestLike, Route } from 'itty-router'
 
 import {
@@ -18,7 +18,6 @@ interface Env {
 }
 
 interface Request extends IttyRequest {
-  client: Client
   db: NeonDatabase
 }
 
@@ -28,9 +27,7 @@ interface Methods {
 }
 
 async function injectDB(request: Request, env: Env) {
-  request.client = new Client(env.NEON_DATABASE_URL)
-  request.db = drizzle(request.client)
-  request.client.connect()
+  request.db = drizzle(neon(env.NEON_DATABASE_URL))
 }
 
 const router = Router<Request, any[]>({ base: '/' })
