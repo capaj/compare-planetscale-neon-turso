@@ -9,12 +9,7 @@ comparison made between three serverless DB offerings:
 neon and turso are using the hobby plan.
 planetscale is the scaler pro plan as I was unable to get the hobby plan in time of testing. Will update this chart when I get access to it.
 
-<!-- ![comparison](chart.png) --!>
-TODO measure again with
-
-
-Chart shows timings for 150 requests done in 3 second intervals over the course of 7 minutes 30 seconds.
-This is only including the query time measured with `performance.now()` right before a query and after it. It does not include http overhead.
+TODO measure again with neon HTTP driver and upload a proper chart.
 
 ## Stack and infrastructure
 
